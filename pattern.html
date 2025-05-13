@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pattern</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+    body {
+        cursor: crosshair;
+    }
+    .full-area {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+    </style>
+</head>
+<body>
+    <div class="full-area" onclick="goRandom()"></div>
+    
+<script>
+const pages = [...Array(20).keys()].map(i => `page${i + 1}.html`);
+function goRandom() {
+    const target = pages[Math.floor(Math.random() * pages.length)];
+    window.location.href = target;
+}
+</script>
+
+</body>
+</html>
