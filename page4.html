@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page 4</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>PAGE 4</h1>
+        <p>I left a piece of me in the code.</p>
+        <nav>
+            <a href="page3.html">Previous</a>
+            <a href="page5.html">Next</a>
+        </nav>
+        <img id="disturbing-image" src="me2022.png" alt="Disturbing Image">
+    </div>
+    <script>
+        const image = document.getElementById('disturbing-image');
+
+        function glitchContrast() {
+            const chance = Math.random();
+            if (chance > 0.1) {
+                const contrastValue = 100 + Math.random() * 600; 
+                image.style.filter = `contrast(${contrastValue}%)`;
+            } else {
+                image.style.filter = 'contrast(100%)';
+            }
+        }
+
+        setInterval(glitchContrast, Math.random() * 500 + 400);
+    </script>
+</body>
+</html>

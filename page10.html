@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page 10</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>PAGE 10</h1>
+        <p>Look behind you.</p>
+        <nav>
+            <a href="page9.html">Previous</a>
+            <a href="page11.html">Next</a>
+        </nav>
+        <audio id="bamAudio" src="bam.mp3" autoplay></audio>
+    </div>
+   <script>
+        window.addEventListener('load', () => {
+        const audio = document.getElementById('bamAudio');
+        audio.volume = 0; 
+        audio.play().then(() => {
+            let volume = 0.5;
+            const interval = setInterval(() => {
+            if (volume < 1) {
+                volume += 0.1;
+                audio.volume = Math.min(volume, 1);
+            } else {
+                clearInterval(interval);
+            }
+            }, 200); 
+        }).catch((e) => {
+            console.log('Autoplay failed:', e);
+        });
+        });
+    </script>
+</body>
+</html>

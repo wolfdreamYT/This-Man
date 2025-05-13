@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page 9</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>PAGE 9</h1>
+        <p>He still lerks these very walls.</p>
+        <nav>
+            <a href="page8.html">Previous</a>
+            <a href="page10.html">Next</a>
+        </nav>
+         <video autoplay muted loop playsinline>
+            <source src="jfk1.mp4" type="video/mp4">
+         </video>
+    </div>
+    <script>
+        const image = document.getElementById('disturbing-image');
+
+        function glitchContrast() {
+            const chance = Math.random();
+            if (chance > 0.1) {
+                const contrastValue = 100 + Math.random() * 600; 
+                image.style.filter = `contrast(${contrastValue}%)`;
+            } else {
+                image.style.filter = 'contrast(100%)';
+            }
+        }
+
+        setInterval(glitchContrast, Math.random() * 500 + 400);
+    </script>
+</body>
+</html>

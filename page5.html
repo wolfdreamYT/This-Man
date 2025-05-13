@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page 5</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>PAGE 5</h1>
+        <p>Can you hear it breathing?</p>
+        <nav>
+            <a href="page4.html">Previous</a>
+            <a href="page6.html">Next</a>
+        </nav>
+        <audio id="breath1Audio" src="breath1.mp3" autoplay></audio>
+    </div>
+   <script>
+        window.addEventListener('load', () => {
+        const audio = document.getElementById('breath1Audio');
+        audio.volume = 0; 
+        audio.play().then(() => {
+            let volume = 0;
+            const interval = setInterval(() => {
+            if (volume < 1) {
+                volume += 0.05;
+                audio.volume = Math.min(volume, 1);
+            } else {
+                clearInterval(interval);
+            }
+            }, 200); 
+        }).catch((e) => {
+            console.log('Autoplay failed:', e);
+        });
+        });
+    </script>
+</body>
+</html>
